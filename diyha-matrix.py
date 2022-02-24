@@ -89,7 +89,7 @@ def system_message(client, msg):
         if msg.payload == b'ON':
             DISPLAY.set_state(SECURITY_STATE)
         else:
-            DISPLAY.set_state(IDLE_STATE)
+            DISPLAY.set_state(DEMO_STATE)
     elif msg.topic == 'diy/system/silent':
         if msg.payload == b'ON':
             DISPLAY.set_state(IDLE_STATE)

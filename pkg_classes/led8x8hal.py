@@ -155,6 +155,7 @@ class Led8x8HAL:
                     if state == SECURITY_STATE:
                         self.matrix8x8.fill(0)
                     elif state == IDLE_STATE:
+                        time.sleep(0.5)
                         self.idle.update()
                     else: #demo
                         if mode == FIBONACCI_MODE:
@@ -192,6 +193,10 @@ class Led8x8HAL:
     def set_state(self, state):
         """ set the machine state """
         self.mode_controller.set_state(state)
+        if state == IDLE_STATE:
+            self.matrix8x8.brightness = 0.1
+        else:
+            self.matrix8x8.brightness = 1.0
 
     def get_state(self,):
         """ get the current machine state """
