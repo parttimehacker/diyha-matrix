@@ -66,7 +66,7 @@ FIBONACCI_MODE = 2
 WOPR_MODE = 3
 LIFE_MODE = 4
 
-SLEEP_TIME = [ 0.2, 0.2, 0.3, 0.1, 0.5 ]
+SLEEP_TIME = [ 0.2, 0.2, 0.2, 0.2, 0.5 ]
 
 class ModeController:
     """ control changing modes. note Fire and Panic are externally controlled. """
@@ -124,7 +124,7 @@ class Led8x8HAL:
         # Create the I2C interface.
         i2c = busio.I2C(board.SCL, board.SDA)
         # Create the matrix class.
-        self.matrix8x8 = matrix.Matrix8x8x2(i2c)
+        self.matrix8x8 = matrix.Matrix8x8x2(i2c,auto_write=True)
         self.matrix8x8.fill(0)
         self.mode_controller = ModeController()
         self.idle = Led8x8Idle(self.matrix8x8)

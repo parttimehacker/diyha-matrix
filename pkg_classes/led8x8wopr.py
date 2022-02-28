@@ -56,10 +56,11 @@ class Led8x8Wopr:
         for i in range(64):
             x = random.randint(0, 7)
             y = random.randint(0, 7)
-            bit = random.randint(0, 3)
+            bit = random.randint(1, 3)
             if bit == 2:
                 bit = 1
             self.matrix[x,y] = bit
+
             
     def updateO(self,):
         """ display the series as a 64 bit image with alternating colored pixels """
