@@ -34,7 +34,8 @@ Adaftruit's 8x8 LED backpack running a variety of displays. The device is used a
 <!-- You don't have to answer all the questions - just the ones relevant to your project. -->
 
 ## Technologies Used
-- python - version 3.7.3
+- python : version 3.7.3
+- paho-mqtt : version 1.6.1
 
 ## Features
 List the ready features here:
